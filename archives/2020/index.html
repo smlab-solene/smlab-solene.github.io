@@ -325,16 +325,16 @@
   
 
   
+
 <script>
-NexT.utils.loadComments('#valine-comments', () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
-    new Valine(Object.assign({
-      el  : '#valine-comments',
-      path: "/archives/2020/",
-    }, {"enable":true,"appId":"sHNyoikQLo2nuzS4iI2dcxAK-MdYXbMMI","appKey":"Bux9IRXsE2f7RxTolBlaVdSb","placeholder":"Say sth to Solène~ [Full syntax support for Markdown.]","avatar":"monsterid","meta":["nick","mail"],"pageSize":10,"lang":"en","visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
-    ));
-  }, window.Valine);
-});
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-smlab-solene-github-io.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
 </script>
 
 </body>
